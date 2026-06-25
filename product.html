@@ -213,6 +213,30 @@ box-shadow:0 10px 20px rgba(255, 255, 255, 0.25);
 .footer-bottom strong{
     color:white;
 }
+  @media (max-width: 768px){
+
+    .footer-container{
+        grid-template-columns: repeat(2,1fr);
+        gap: 25px;
+    }
+
+    .footer{
+        padding: 50px 25px;
+    }
+
+    .footer-col{
+        text-align: center;
+    }
+
+    .footer-bottom{
+        font-size: 14px;
+    }
+    .footer-col a,
+.footer-col p{
+    word-break: break-word;
+}
+
+}
 
 
 </style>
