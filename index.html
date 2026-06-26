@@ -14,6 +14,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </head>
 
 <body>
+ <div id="intro-screen">
+
+    <video id="intro-video">
+        <source src="vidio intro.mp4" type="video/mp4">
+    </video>
+
+    <button id="enter-btn">
+        ENTER FRDM
+    </button>
+
+</div>
 
 <header>
 
@@ -177,6 +188,26 @@ with your style and your character.
     </p>
   </div>
 </footer>
+ <script>
+const video = document.getElementById("intro-video");
+const intro = document.getElementById("intro-screen");
+const btn = document.getElementById("enter-btn");
+
+btn.addEventListener("click", () => {
+
+    video.play();
+
+    btn.style.display = "none";
+
+});
+
+video.addEventListener("ended", () => {
+
+    intro.style.display = "none";
+
+});
+</script>
+
 
 </body>
 </html>
