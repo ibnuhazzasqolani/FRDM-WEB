@@ -16,7 +16,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <body>
  <div id="intro-screen">
 
-    <video id="intro-video">
+    <video id="intro-video"
+    playsinline
+    webkit-playsinline
+    autoplay
         <source src="vidio intro.mp4" type="video/mp4">
     </video>
 
@@ -191,23 +194,26 @@ with your style and your character.
  <script>
 const video = document.getElementById("intro-video");
 const intro = document.getElementById("intro-screen");
-const btn = document.getElementById("enter-btn");
 
-btn.addEventListener("click", () => {
+// saat video selesai
+video.onended = function () {
+    intro.style.opacity = "0";
 
-    video.play();
+    setTimeout(() => {
+        intro.style.display = "none";
+    }, 500);
+};
 
-    btn.style.display = "none";
-
-});
-
-video.addEventListener("ended", () => {
-
-    intro.style.display = "none";
-
-});
+// backup jika event ended gagal di HP
+setInterval(() => {
+    if (
+        video.duration > 0 &&
+        video.currentTime >= video.duration - 0.2
+    ) {
+        intro.style.display = "none";
+    }
+}, 500);
 </script>
-
 
 </body>
 </html>
