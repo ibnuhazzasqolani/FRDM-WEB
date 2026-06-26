@@ -16,6 +16,7 @@ font-family:'Montserrat',Arial, Helvetica, sans-serif;
     display:flex;
     justify-content:center;
     align-items:center;
+    transition: opacity 0.5s ease;
 }
 
 #intro-video{
