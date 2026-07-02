@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Credits | FRDM Culture Apparel</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/credits.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+  /* ===========================
+   FRDM CREDITS PAGE
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+overflow-x:hidden;
+}
+
+/* ===========================
+ HERO
+=========================== */
+
+.credit-hero{
+position:relative;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+overflow:hidden;
+}
+
+.hero-video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+z-index:-1;
+}
+
+.hero-content{
+padding:20px;
+}
+
+.hero-content h1{
+font-size:75px;
+font-weight:800;
+letter-spacing:8px;
+}
+
+.hero-content h2{
+font-size:45px;
+color:#e00000;
+margin-top:10px;
+}
+
+.hero-content p{
+margin-top:20px;
+font-size:18px;
+color:#ddd;
+max-width:700px;
+}
+
+/* ===========================
+ SECTION TITLE
+=========================== */
+
+.team-section{
+padding:100px 8%;
+background:#141414;
+}
+
+.section-title{
+text-align:center;
+font-size:45px;
+margin-bottom:60px;
+font-weight:700;
+}
+
+/* ===========================
+ GRID
+=========================== */
+
+.team-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:35px;
+
+}
+
+/* ===========================
+ CARD
+=========================== */
+
+.member-card{
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+overflow:hidden;
+
+transition:.4s;
+
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+.member-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 0 30px rgba(255,0,0,.45);
+
+}
+
+.thumbnail{
+
+position:relative;
+
+height:350px;
+
+overflow:hidden;
+
+}
+
+.thumbnail img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+cursor:pointer;
+
+}
+
+
+
+.member-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+
+.member-card h3{
+
+margin-top:20px;
+
+text-align:center;
+
+font-size:24px;
+
+}
+
+.member-card p{
+
+text-align:center;
+
+margin:15px;
+
+color:#bdbdbd;
+
+padding-bottom:20px;
+
+}
+
+/* ===========================
+ MODAL
+=========================== */
+
+#videoModal{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+background:rgba(0,0,0,.95);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+z-index:99999;
+
+}
+
+.modal-content{
+
+position:relative;
+
+text-align:center;
+
+}
+
+.close{
+
+position:absolute;
+
+top:-55px;
+right:-10px;
+
+font-size:35px;
+
+cursor:pointer;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.close:hover{
+
+color:#ff0000;
+
+}
+
+#memberVideo{
+
+height:85vh;
+
+width:auto;
+
+max-width:95vw;
+
+border-radius:18px;
+
+object-fit:contain;
+
+background:black;
+
+box-shadow:0 0 35px rgba(255,0,0,.35);
+
+}
+
+.member-info{
+
+margin-top:20px;
+
+}
+
+.member-info h2{
+
+font-size:35px;
+
+}
+
+.member-info p{
+
+margin-top:8px;
+
+color:#bdbdbd;
+
+font-size:18px;
+
+}
+
+/* ===========================
+ REVEAL
+=========================== */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(80px);
+
+transition:1s;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* ===========================
+ FOOTER
+=========================== */
+
+.footer{
+
+background:#0a0a0a;
+
+padding:60px 8%;
+
+}
+
+.footer-container{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:40px;
+
+}
+
+.footer-col h3{
+
+margin-bottom:20px;
+
+color:#ff0000;
+
+}
+
+.footer-col p{
+
+margin:8px 0;
+
+color:#cfcfcf;
+
+}
+
+/* ===========================
+ RESPONSIVE TABLET
+=========================== */
+
+@media(max-width:992px){
+
+.hero-content h1{
+
+font-size:55px;
+
+}
+
+.hero-content h2{
+
+font-size:35px;
+
+}
+
+.section-title{
+
+font-size:35px;
+
+}
+
+.footer-container{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+/* ===========================
+ RESPONSIVE HP
+=========================== */
+
+@media(max-width:768px){
+
+.hero-content h1{
+
+font-size:38px;
+
+letter-spacing:3px;
+
+}
+
+.hero-content h2{
+
+font-size:28px;
+
+}
+
+.hero-content p{
+
+font-size:15px;
+
+}
+
+.team-section{
+
+padding:70px 20px;
+
+}
+
+.team-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.thumbnail{
+
+height:420px;
+
+}
+
+#memberVideo{
+
+height:78vh;
+
+max-width:95vw;
+
+}
+
+.member-info h2{
+
+font-size:28px;
+
+}
+
+.member-info p{
+
+font-size:15px;
+
+}
+
+.footer-container{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.close{
+
+top:-45px;
+
+right:5px;
+
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+<div class="logo">
+FRDM CULTURE
+</div>
+
+<ul class="nav-links">
+<li><a href="home page.html">Home</a></li>
+<li><a href="product.html">Products</a></li>
+<li><a href="rekomendasi.html">Recommend</a></li>
+<li><a href="style-lab.html">Looks</a></li>
+<li><a href="FAQ.html">FAQ</a></li>
+</ul>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="credit-hero">
+
+<video autoplay muted loop playsinline class="hero-video">
+
+<source src="assets/credits-bg.mp4" type="video/mp4">
+
+</video>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>THE PEOPLE</h1>
+
+<h2>BEHIND FRDM</h2>
+
+<p>
+Every stitch, every design, every idea,
+built with passion.
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= TEAM ================= -->
+
+<section class="team-section">
+
+<h2 class="section-title">
+
+Meet Our Team
+
+</h2>
+
+<div class="team-grid">
+
+<!-- ================= IBNU ================= -->
+
+<div class="member-card reveal">
+
+    <div class="thumbnail">
+
+        <img class="member-photo"
+            src="asset credit/ibnu fot.jpeg"
+            data-name="IBNU"
+            data-role="Chief Technology Officer"
+            data-video="asset credit/ibnu vid.mp4">
+
+    </div>
+
+    <h3>IBNU</h3>
+
+    <p>CTO</p>
+
+</div>
+
+<!-- ================= DIMAS ================= -->
+
+<div class="member-card reveal">
+
+    <div class="thumbnail">
+
+        <img class="member-photo"
+            src="asset credit/dimas fot.jpeg"
+            data-name="DIMAS"
+            data-role="Creative Director"
+            data-video="asset credit/dimas vid.mp4">
+
+    </div>
+
+    <h3>DIMAS</h3>
+
+    <p>CREATIVE DIRECTOR</p>
+
+</div>
+
+<!-- ================= GHIFARI ================= -->
+
+<div class="member-card reveal">
+
+    <div class="thumbnail">
+
+        <img class="member-photo"
+            src="asset credit/gip fot.jpeg"
+            data-name="GHIFARI"
+            data-role="Chief Executive Officer"
+            data-video="asset credit/gip vid.mp4">
+
+    </div>
+
+    <h3>GHIFARI</h3>
+
+    <p>CEO</p>
+
+</div>
+
+<!-- ================= FAHIRA ================= -->
+
+<div class="member-card reveal">
+
+    <div class="thumbnail">
+
+        <img class="member-photo"
+            src="asset credit/fahira fot.jpeg"
+            data-name="FAHIRA"
+            data-role="Marketing Manager"
+            data-video="asset credit/fahira vid.mp4">
+
+    </div>
+
+    <h3>FAHIRA</h3>
+
+    <p>MARKETING MANAGER</p>
+
+</div>
+
+<!-- ================= MAZAYA ================= -->
+
+<div class="member-card reveal">
+
+    <div class="thumbnail">
+
+        <img class="member-photo"
+            src="asset credit/aya fot.jpeg"
+            data-name="MAZAYA"
+            data-role="Chief Marketing Officer"
+            data-video="asset credit/aya vid.mp4">
+
+    </div>
+
+    <h3>MAZAYA</h3>
+
+    <p>CMO</p>
+
+</div>
+
+<!-- ================= RASYA ================= -->
+
+<div class="member-card reveal">
+
+    <div class="thumbnail">
+
+        <img class="member-photo"
+            src="asset credit/rasya fot.jpeg"
+            data-name="RASYA"
+            data-role="Chief Operating Officer"
+            data-video="asset credit/rasya vid.mp4">
+
+    </div>
+
+    <h3>RASYA</h3>
+
+    <p>COO</p>
+
+</div>
+
+<!-- ================= HANIF ================= -->
+
+<div class="member-card reveal">
+
+    <div class="thumbnail">
+
+        <img class="member-photo"
+            src="asset credit/hanif fot.jpeg"
+            data-name="HANIF"
+            data-role="Chief Financial Officer"
+            data-video="asset credit/hanif vid.mp4">
+
+    </div>
+
+    <h3>HANIF</h3>
+
+    <p>CFO</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MODAL VIDEO ================= -->
+
+<div id="videoModal">
+
+    <div class="modal-content">
+
+        <span class="close">
+            <i class="fas fa-times"></i>
+        </span>
+
+        <video id="memberVideo"
+               controls
+               playsinline
+               webkit-playsinline>
+
+            <source src="" type="video/mp4">
+
+        </video>
+
+        <div class="member-info">
+
+            <h2 id="memberName"></h2>
+
+            <p id="memberRole"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-col">
+
+<h3>FRDM CULTURE</h3>
+
+<p>Born For Your Style.</p>
+
+<p>Premium Custom Apparel.</p>
+
+</div>
+
+<div class="footer-col">
+
+<h3>FOLLOW US</h3>
+
+<p>Instagram : @frdm_aparel</p>
+
+<p>TikTok : @frdm.co</p>
+
+</div>
+
+<div class="footer-col">
+
+<h3>CREATED BY</h3>
+
+<p>Ibnu</p>
+
+<p>Dimas</p>
+
+<p>Ghifari</p>
+
+<p>Hanif</p>
+
+<p>Fahira</p>
+
+<p>Mazaya</p>
+
+<p>Rasya</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<script>
+  // ===============================
+// FRDM CREDITS JAVASCRIPT
+// ===============================
+
+// Ambil semua tombol play
+const playButtons=document.querySelectorAll(".member-photo");
+
+// Modal
+const modal = document.getElementById("videoModal");
+
+// Video
+const video = document.getElementById("memberVideo");
+
+// Source video
+const source = video.querySelector("source");
+
+// Nama & Jabatan
+const memberName = document.getElementById("memberName");
+const memberRole = document.getElementById("memberRole");
+
+// Tombol close
+const closeBtn = document.querySelector(".close");
+
+
+// ===============================
+// OPEN VIDEO
+// ===============================
+
+playButtons.forEach(button => {
+
+button.addEventListener("click", () => {
+
+const name = button.dataset.name;
+
+const role = button.dataset.role;
+
+const videoPath = button.dataset.video;
+
+// Ganti data
+
+memberName.innerHTML = name;
+
+memberRole.innerHTML = role;
+
+// Ganti video
+
+source.src = videoPath;
+
+video.load();
+
+// Tampilkan modal
+
+modal.style.display = "flex";
+
+// Disable scroll
+
+document.body.style.overflow = "hidden";
+
+// Play video
+
+video.play();
+
+});
+
+});
+
+
+// ===============================
+// CLOSE MODAL
+// ===============================
+
+function closeVideo(){
+
+video.pause();
+
+video.currentTime = 0;
+
+modal.style.display = "none";
+
+document.body.style.overflow = "auto";
+
+}
+
+// tombol X
+
+closeBtn.addEventListener("click", closeVideo);
+
+
+// ===============================
+// CLICK OUTSIDE MODAL
+// ===============================
+
+modal.addEventListener("click",function(e){
+
+if(e.target===modal){
+
+closeVideo();
+
+}
+
+});
+
+
+// ===============================
+// ESC KEY
+// ===============================
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+
+closeVideo();
+
+}
+
+});
+
+
+// ===============================
+// AUTO CLOSE SAAT VIDEO SELESAI
+// ===============================
+
+video.addEventListener("ended",()=>{
+
+closeVideo();
+
+});
+
+
+// ===============================
+// SCROLL REVEAL ANIMATION
+// ===============================
+
+const reveals=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",revealCards);
+
+window.addEventListener("load",revealCards);
+
+function revealCards(){
+
+for(let i=0;i<reveals.length;i++){
+
+const windowHeight=window.innerHeight;
+
+const cardTop=reveals[i].getBoundingClientRect().top;
+
+const revealPoint=120;
+
+if(cardTop<windowHeight-revealPoint){
+
+reveals[i].classList.add("active");
+
+}
+
+}
+
+}
+
+
+</script>
+
+</body>
+
+</html>
