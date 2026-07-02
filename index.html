@@ -188,23 +188,36 @@ with your style and your character.
   </div>
 </footer>
 <script>
+
 const video = document.getElementById("intro-video");
 const intro = document.getElementById("intro-screen");
 const btn = document.getElementById("enter-btn");
 
-btn.addEventListener("click", () => {
+// Cek apakah intro sudah pernah ditampilkan
+if(sessionStorage.getItem("introShown") === "true"){
+    intro.style.display = "none";
+}else{
+    intro.style.display = "flex";
+}
 
-    video.play();
+// Saat tombol diklik
+btn.addEventListener("click", function(){
 
     btn.style.display = "none";
 
+    video.play();
+
 });
 
-video.addEventListener("ended", () => {
+// Saat video selesai
+video.addEventListener("ended", function(){
+
+    sessionStorage.setItem("introShown", "true");
 
     intro.style.display = "none";
 
 });
+
 </script>
 
 </body>
