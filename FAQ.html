@@ -5,13 +5,204 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>FAQ | FRDM Culture Apparel</title>
-
-<link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet"
+<link href="css/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <style>
+/* ================= LOADING SCREEN ================= */
 
+#loading-screen{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#000;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+transition:1s;
+
+}
+
+.loading-content{
+
+text-align:center;
+
+animation:fadeUp 1s ease;
+
+}
+
+.loading-logo{
+
+width:140px;
+
+margin-bottom:20px;
+
+animation:pulse 2s infinite;
+
+}
+
+.loading-title{
+
+animation:glitch 1.2s infinite;
+
+}
+
+@keyframes glitch{
+
+0%{
+
+text-shadow:2px 0 red,-2px 0 blue;
+
+}
+
+25%{
+
+text-shadow:-2px 0 red,2px 0 blue;
+
+}
+
+50%{
+
+text-shadow:3px 0 red,-3px 0 blue;
+
+}
+
+75%{
+
+text-shadow:-3px 0 red,3px 0 blue;
+
+}
+
+100%{
+
+text-shadow:none;
+
+}
+
+}
+
+.loading-text{
+
+color:#ff1d25;
+
+font-size:18px;
+
+letter-spacing:3px;
+
+margin-bottom:35px;
+
+}
+
+.loading-bar{
+
+width:320px;
+
+height:10px;
+
+background:#222;
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:0 0 15px rgba(255,0,0,.3);
+
+margin:auto;
+
+}
+
+.loading-progress{
+
+width:0;
+
+height:100%;
+
+background:linear-gradient(90deg,#ff0000,#ff4040);
+
+border-radius:30px;
+
+}
+
+#loading-percent{
+
+display:block;
+
+margin-top:18px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:white;
+
+}
+
+/* logo pulse */
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+filter:drop-shadow(0 0 5px red);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+filter:drop-shadow(0 0 25px red);
+
+}
+
+100%{
+
+transform:scale(1);
+
+filter:drop-shadow(0 0 5px red);
+
+}
+
+}
+
+/* muncul dari bawah */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
 *{
 margin:0;
 padding:0;
@@ -25,41 +216,138 @@ color:#000000;
 border: #f70b0b solid 2px;
 }
 
-/* NAVBAR */
-
 .navbar{
-    position: sticky;
-    top: 0;
 
-    z-index: 9999;
+position:fixed;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+top:15px;
 
-    padding:20px 10%;
+left:50%;
 
-    background:#000;
+transform:translateX(-50%);
 
-    border-bottom:1px solid #d80505;
+width:92%;
+
+height:85px;
+
+padding:0 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(10,10,10,.92);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,0,0,.25);
+
+border-radius:28px;
+
+box-shadow:0 0 35px rgba(255,0,0,.15);
+
+z-index:99999;
+
 }
 
-
 .logo{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+text-decoration:none;
+
 color:white;
-font-size:24px;
+
+font-size:20px;
+
 font-weight:700;
+
+letter-spacing:3px;
+
+}
+
+.logo img{
+
+width:42px;
+
 }
 
 .nav-links{
+
 display:flex;
+
+align-items:center;
+
+gap:38px;
+
 list-style:none;
-gap:25px;
+
 }
 
 .nav-links a{
+
 color:white;
+
 text-decoration:none;
+
+font-size:18px;
+
+font-weight:500;
+
+position:relative;
+
+transition:.35s;
+
+
+}
+
+.nav-links a:hover{
+
+color:#ff2b2b;
+
+
+}
+
+.nav-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-8px;
+
+width:0;
+
+height:3px;
+
+background:#ff1d25;
+
+transition:.35s;
+
+box-shadow:0 0 8px rgb(237, 236, 236);
+
+}
+
+.nav-links a:hover::after,
+
+.nav-links .active::after{
+
+width:100%;
+
+}
+
+.nav-links .active{
+
+color:#ff2b2b;
+
 }
 
 /* HEADER */
@@ -145,6 +433,7 @@ transform:rotate(45deg);
 }
 
 /* FOOTER */
+
 .footer{
     background:#111;
     color:white;
@@ -187,30 +476,6 @@ transform:rotate(45deg);
 .footer-bottom strong{
     color:white;
 }
-    @media (max-width: 768px){
-
-    .footer-container{
-        grid-template-columns: repeat(2,1fr);
-        gap: 25px;
-    }
-
-    .footer{
-        padding: 50px 25px;
-    }
-
-    .footer-col{
-        text-align: center;
-    }
-
-    .footer-bottom{
-        font-size: 14px;
-    }
-    .footer-col a,
-.footer-col p{
-    word-break: break-word;
-}
-
-}
 
 @media(max-width:768px){
 
@@ -230,18 +495,51 @@ gap:15px;
 </head>
 
 <body>
+  <div id="cursor-logo">
+    <img src="cursor logo.png">
+</div>
+ <!-- ================= LOADING SCREEN ================= -->
+
+<div id="loading-screen">
+
+    <div class="loading-content">
+
+        <img src="frdm cortis.png" class="loading-logo">
+
+        <h1 class="loading-title">
+            FRDM CULTURE
+        </h1>
+
+        <p class="loading-text">
+            DESIGNED FOR REBELS
+        </p>
+
+        <div class="loading-bar">
+
+            <div class="loading-progress"></div>
+
+        </div>
+
+        <span id="loading-percent">0%</span>
+
+    </div>
+
+</div>
 
 <nav class="navbar">
 
-<div class="logo">FRDM CULTURE</div>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="">
+        <span>FRDM CULTURE</span>
+    </a>
 
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="product.html">Products</a></li>
-<li><a href="rekomendasi.html">recommend</a></li>
-<li><a href="style-lab.html">Style Lab</a></li>
-    <li><a href="credit.html">credit</a></li>
-</ul>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="rekomendasi.html">Recommend</a></li>
+        <li><a href="style-lab.html">Style Lab</a></li>
+        <li><a href="FAQ.html" class="active">FAQ</a></li>
+    </ul>
 
 </nav>
 
@@ -249,7 +547,7 @@ gap:15px;
 <section class="faq-header">
 
 <h1 style="color:#ffffff">Frequently Asked Questions</h1>
-
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
 
 <p style="color: #fbfafa;">
 Temukan jawaban dari pertanyaan yang paling sering ditanyakan pelanggan FRDM Culture Apparel.
@@ -433,7 +731,6 @@ customer bisa screenshot atau menyebutkan nama jenis custom yang dipilih dari ha
       <h3>FRDM CULTURE</h3>
       <p>Streetwear & Custom Apparel</p>
       <p>Custom design sesuai request</p>
-      <p>Indonesia</p>
     </div>
 
     <div class="footer-col">
@@ -442,6 +739,8 @@ customer bisa screenshot atau menyebutkan nama jenis custom yang dipilih dari ha
       <a href="rekomendasi.html">Recommend</a>
       <a href="style-lab.html">Style Lab</a>
       <a href="FAQ.html">FAQ</a>
+      
+      
     </div>
 
     <div class="footer-col">
@@ -470,11 +769,42 @@ customer bisa screenshot atau menyebutkan nama jenis custom yang dipilih dari ha
   <div class="footer-bottom">
     <p>© 2026 FRDM CULTURE. All rights reserved.</p>
 
-   
+    
   </div>
 </footer>
 
 <script>
+  const loading=document.getElementById("loading-screen");
+
+const progress=document.querySelector(".loading-progress");
+
+const percent=document.getElementById("loading-percent");
+
+let value=0;
+
+let loadingInterval=setInterval(()=>{
+
+value++;
+
+progress.style.width=value+"%";
+
+percent.innerHTML=value+"%";
+
+if(value>=100){
+
+clearInterval(loadingInterval);
+
+setTimeout(()=>{3200
+
+loading.style.opacity="0";
+
+loading.style.visibility="hidden";
+
+},600);
+
+}
+
+},25);
 
 const faqItems = document.querySelectorAll('.faq-item');
 
@@ -495,6 +825,40 @@ other.classList.remove('active');
 item.classList.toggle('active');
 
 });
+
+});
+document.addEventListener("mousemove", function(e){
+
+const trail=document.createElement("div");
+
+trail.className="trail";
+
+trail.style.left=e.clientX+"px";
+
+trail.style.top=e.clientY+"px";
+
+document.body.appendChild(trail);
+
+setTimeout(()=>{
+
+trail.remove();
+
+},600);
+
+});
+const cursor=document.getElementById("cursor-logo");
+
+if(localStorage.getItem("secretUnlocked")==="true"){
+
+document.body.style.cursor="none";
+cursor.style.display="block";
+
+}
+
+document.addEventListener("mousemove",(e)=>{
+
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
 
 });
 
