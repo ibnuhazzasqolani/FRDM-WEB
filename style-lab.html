@@ -11,6 +11,198 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+#loading-screen{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#000;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+transition:1s;
+
+}
+
+.loading-content{
+
+text-align:center;
+
+animation:fadeUp 1s ease;
+
+}
+
+.loading-logo{
+
+width:140px;
+
+margin-bottom:20px;
+
+animation:pulse 2s infinite;
+
+}
+
+.loading-title{
+
+animation:glitch 1.2s infinite;
+
+}
+
+@keyframes glitch{
+
+0%{
+
+text-shadow:2px 0 red,-2px 0 blue;
+
+}
+
+25%{
+
+text-shadow:-2px 0 red,2px 0 blue;
+
+}
+
+50%{
+
+text-shadow:3px 0 red,-3px 0 blue;
+
+}
+
+75%{
+
+text-shadow:-3px 0 red,3px 0 blue;
+
+}
+
+100%{
+
+text-shadow:none;
+
+}
+
+}
+
+.loading-text{
+
+color:#ff1d25;
+
+font-size:18px;
+
+letter-spacing:3px;
+
+margin-bottom:35px;
+
+}
+
+.loading-bar{
+
+width:320px;
+
+height:10px;
+
+background:#222;
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:0 0 15px rgba(255,0,0,.3);
+
+margin:auto;
+
+}
+
+.loading-progress{
+
+width:0;
+
+height:100%;
+
+background:linear-gradient(90deg,#ff0000,#ff4040);
+
+border-radius:30px;
+
+}
+
+#loading-percent{
+
+display:block;
+
+margin-top:18px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:white;
+
+}
+
+/* logo pulse */
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+filter:drop-shadow(0 0 5px red);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+filter:drop-shadow(0 0 25px red);
+
+}
+
+100%{
+
+transform:scale(1);
+
+filter:drop-shadow(0 0 5px red);
+
+}
+
+}
+
+/* muncul dari bawah */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
 
 *{
 margin:0;
@@ -296,21 +488,58 @@ height:450px;
 
 <body>
 
-<nav class="navbar">
+<div id="cursor-logo">
+    <img src="assets/cursor logo.png">
+</div>
+  <!-- ================= LOADING SCREEN ================= -->
 
-<div class="logo">
-FRDM LOOKBOOK
+<div id="loading-screen">
+
+    <div class="loading-content">
+
+        <img src="assets/frdm cortis.png" class="loading-logo">
+
+        <h1 class="loading-title">
+            FRDM CULTURE
+        </h1>
+
+        <p class="loading-text">
+            DESIGNED FOR REBELS
+        </p>
+
+        <div class="loading-bar">
+
+            <div class="loading-progress"></div>
+
+        </div>
+
+        <span id="loading-percent">0%</span>
+
+    </div>
+
 </div>
 
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="product.html">Products</a></li>
-<li><a href="rekomendasi.html">Recommend</a></li>
-<li><a href="FAQ.html">FAQ</a></li>
-    <li><a href="credit.html">credit</a></li>
-</ul>
 
-</nav>
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="">
+        <span>FRDM CULTURE</span>
+    </a>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="product.html">Products</a>
+
+        <a href="rekomendasi.html">Recommend</a>
+
+        <a href="style-lab.html" class="active">Style Lab</a>
+
+        <a href="FAQ.html">FAQ</a>
+
+    </nav>
 <section class="hero-lookbook">
 
 <video autoplay muted loop playsinline>
@@ -414,66 +643,97 @@ Boxy Oversize + Baggy Jeans
 </footer>
 
 <script>
+const loading=document.getElementById("loading-screen");
+
+const progress=document.querySelector(".loading-progress");
+
+const percent=document.getElementById("loading-percent");
+
+let value=0;
+
+let loadingInterval=setInterval(()=>{
+
+value++;
+
+progress.style.width=value+"%";
+
+percent.innerHTML=value+"%";
+
+if(value>=100){
+
+clearInterval(loadingInterval);
+
+setTimeout(()=>{3200
+
+loading.style.opacity="0";
+
+loading.style.visibility="hidden";
+
+},600);
+
+}
+
+},25);
 
 const looks = [
 
 {
 name:"streetwear basic",
-image:"streatwear basic.jpeg",
+image:"assets/streatwear basic.jpeg",
 desc:"fitted tee + Baggy Jeans"
 },
 
 {
 name:"Korean Street Style",
-image:"korean street.jpeg",
+image:"assets/korean street.jpeg",
 desc:"Boxy Oversize + Loose Jeans"
 },
 
 {
 name:"clean casual",
-image:"clean casual.jpeg",
+image:"assets/clean casual.jpeg",
 desc:"Regular Tee + Slim fit Jeans"
 },
 
 {
 name:"American Drip",
-image:"american drip looks .jpeg",
+image:"assets/american drip looks .jpeg",
 desc:"Boxy Oversize + Baggy Jeans"
 },
 
 {
 name:"dark minimalist",
-image:"dark minimalist.jpeg",
+image:"assets/dark minimalist.jpeg",
 desc:"fitted tee + skinny Jeanis"
 },
 
 {
 name:"daily essential",
-image:"daily essential.jpeg",
+image:"assets/daily essential.jpeg",
 desc:"Regular Tee + Slim straight Jeans"
 },
 
 {
 name:"Vintage Vibes",
-image:"vintage vibes.jpeg",
+image:"assets/vintage vibes.jpeg",
 desc:"boxy Oversize + Flare Jeans"
 },
 
 {
 name:"Casual Chill",
-image:"casual chill .jpeg",
+image:"assets/casual chill .jpeg",
 desc:"regular tee + Loose Jeans"
 },
 
 {
 name:"Smart Fit",
-image:"smart fit.jpeg",
+image:"assets/smart fit.jpeg",
 desc:"Fitted Tee + Slim Fit Jeans"
 },
 
 {
 name:"Y2K Style",
-image:"y2k looks.jpeg",
+image:"assets/y2k looks.jpeg",
 desc:"Boxy Oversize + Flare Jeans"
 }
 
@@ -524,6 +784,42 @@ current = looks.length - 1;
 updateLook();
 
 }
+document.addEventListener("mousemove", function(e){
+
+const trail=document.createElement("div");
+
+trail.className="trail";
+
+trail.style.left=e.clientX+"px";
+
+trail.style.top=e.clientY+"px";
+
+document.body.appendChild(trail);
+
+setTimeout(()=>{
+
+trail.remove();
+
+},600);
+
+});
+const cursor=document.getElementById("cursor-logo");
+
+if(localStorage.getItem("secretUnlocked")==="true"){
+
+document.body.style.cursor="none";
+cursor.style.display="block";
+
+}
+
+document.addEventListener("mousemove",(e)=>{
+
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+
+});
+
+
 
 </script>
 
