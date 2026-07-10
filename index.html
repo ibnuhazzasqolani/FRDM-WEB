@@ -1,96 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frdm Culture Apparel</title>
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="FRDM Culture - Premium Streetwear & Custom Apparel">
+
+<meta name="keywords" content="Streetwear, Fashion, Custom T-Shirt, Jeans">
+
+<title>FRDM CULTURE</title>
+
+<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 
+<!-- Google Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 
 <body>
-  <!-- ========================================= -->
-<!--           FRDM SECRET MODE               -->
-<!-- ========================================= -->
 
-<div id="secret-mode">
-
-    <!-- Scanline -->
-    <div class="scanline"></div>
-
-    <!-- Background glitch -->
-    <div class="noise"></div>
-
-    <!-- Badge -->
-    <div id="secret-badge">
-
-        🔥 SECRET MODE ACTIVATED
-
-        <span id="secret-timer">30</span>
-
-    </div>
-
-    <!-- Terminal -->
-    <div id="terminal">
-
-        <img src="logo.png" class="terminal-logo">
-
-        <div id="terminal-output">
-
-            <!-- JS akan mengisi tulisan di sini -->
-
-        </div>
-
-    </div>
-
-</div>
-
-<!-- ========================================= -->
-<!-- Audio -->
-<!-- ========================================= -->
-
-<audio id="glitchSound" preload="auto">
-    <source src="assets/glitch.mp3" type="audio/mp3">
-</audio>
-
-<audio id="secretMusic" preload="auto" loop>
-    <source src="Sempurnanya Aku [C1Rz7exkpAs].mp3" type="audio/mp3">
-</audio>
-
-<!-- ========================================= -->
-<!-- Particle -->
-<!-- ========================================= -->
-
-<div id="particle-container"></div>
-
-<!-- ========================================= -->
-<!-- Hidden Cursor -->
-<!-- ========================================= -->
-
-<div id="cursor-logo">
-
-    <img src="cursor logo.png">
-
-</div>
-  <!-- ================= LOADING SCREEN ================= -->
+<!-- =====================================================
+                    LOADING SCREEN
+====================================================== -->
 
 <div id="loading-screen">
 
     <div class="loading-content">
 
-        <img src="frdm cortis.png" class="loading-logo">
+        <img src="frdm cortis.png"
+        class="loading-logo"
+        alt="FRDM Logo">
 
         <h1 class="loading-title">
+
             FRDM CULTURE
+
         </h1>
 
         <p class="loading-text">
+
             DESIGNED FOR REBELS
+
         </p>
 
         <div class="loading-bar">
@@ -99,249 +61,923 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         </div>
 
-        <span id="loading-percent">0%</span>
+        <span id="loading-percent">
+
+            0%
+
+        </span>
 
     </div>
 
 </div>
-    <div id="intro-screen">
 
-    <video id="intro-video"preload="auto"
-  playsinline>
-        <source src="opening edit.mp4" type="video/mp4">
+
+<!-- =====================================================
+                    INTRO VIDEO
+====================================================== -->
+
+<div id="intro-screen">
+
+    <video
+    id="intro-video"
+    preload="auto"
+    playsinline>
+
+        <source
+        src="opening edit.mp4"
+        type="video/mp4">
+
     </video>
 
     <button id="enter-btn">
+
         WELCOME TO FRDM CULTURE
+
     </button>
 
 </div>
 
+
+<!-- =====================================================
+                    SECRET MODE
+====================================================== -->
+
+<div id="secret-mode">
+
+    <div class="scanline"></div>
+
+    <div class="noise"></div>
+
+    <div id="particle-container"></div>
+
+    <div id="secret-badge">
+
+        🔥 SECRET MODE ACTIVATED
+
+        <span id="secret-timer">
+
+            10
+
+        </span>
+
+    </div>
+
+    <div id="terminal">
+
+        <img
+        src="logo.png"
+        class="terminal-logo"
+        alt="FRDM">
+
+        <div id="terminal-output">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+                    AUDIO
+====================================================== -->
+
+<audio id="glitchSound" preload="auto">
+
+    <source
+    src="assets/glitch.mp3"
+    type="audio/mp3">
+
+</audio>
+
+<audio
+id="secretMusic"
+preload="auto"
+loop>
+
+    <source
+    src="Sempurnanya Aku [C1Rz7exkpAs].mp3"
+    type="audio/mp3">
+
+</audio>
+
+
+<!-- =====================================================
+                    SECRET CURSOR
+====================================================== -->
+
+<div id="cursor-logo">
+
+    <img src="cursor logo.png"
+    alt="FRDM Cursor">
+
+</div>
+
+
+<!-- =====================================================
+                    NAVBAR
+====================================================== -->
+
 <header class="navbar">
 
+    <!-- Logo -->
+
     <a href="index.html" class="logo">
-        <img src="logo.png" alt="">
-        <span>FRDM CULTURE</span>
+
+        <img
+        src="logo.png"
+        alt="FRDM">
+
+        <span>
+
+            FRDM CULTURE
+
+        </span>
+
     </a>
 
-    <nav>
+    <!-- Menu -->
 
-        <a href="index.html" class="active">Home</a>
+    <nav id="navMenu">
 
-        <a href="product.html">Products</a>
+        <a href="index.html" class="active">
 
-        <a href="rekomendasi.html">Recommend</a>
+            Home
 
-        <a href="style-lab.html">Style Lab</a>
+        </a>
 
-        <a href="FAQ.html">FAQ</a>
+        <a href="product.html">
+
+            Products
+
+        </a>
+
+        <a href="rekomendasi.html">
+
+            Recommend
+
+        </a>
+
+        <a href="style-lab.html">
+
+            Style Lab
+
+        </a>
+
+        <a href="FAQ.html">
+
+            FAQ
+
+        </a>
 
     </nav>
 
+    <!-- Mobile Button -->
+
+    <div class="menu-toggle" id="menuToggle">
+
+        <i class="fas fa-bars"></i>
+
+    </div>
+
 </header>
+<!-- =====================================================
+                    HERO SECTION
+====================================================== -->
 
+<section class="hero">
 
-<div class="hero">
+    <!-- Background Video -->
 
-<video autoplay muted loop playsinline class="hero-video">
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline>
 
-<source src="coers.mp4" type="video/mp4">
+        <source src="coers.mp4" type="video/mp4">
 
-</video>
+    </video>
 
-<div class="hero-content">
+    <!-- Overlay -->
 
-<h1>Wear Your FREEDOM</h1>
+    <div class="hero-overlay"></div>
 
-<p>
-Premium T-Shirt & Jeans Custom 
-with your style and your character.
-</p>
+    <!-- Content -->
 
-<a href="product.html" class="btn">
- CUSTOM NOW 
-</a>
+    <div class="hero-content reveal">
 
-</div>
+        <h1>
 
-</div>
-<section class="frdm-slider">
+            WEAR YOUR
+            <span>FREEDOM</span>
 
-<div class="slide-track">
+        </h1>
 
-<img src="look 1 home .jpeg">
-<img src="look 2 home.jpeg">
-<img src="look 3 home.jpeg">
-<img src="look 4 home.jpeg">
-<img src="look 5 home.jpeg">
-<img src="look 6 home.jpeg">
-<img src="look 1 home .jpeg">
-<img src="look 2 home.jpeg">
-<img src="look 3 home.jpeg">
-<img src="look 4 home.jpeg">
-<img src="look 5 home.jpeg">
-<img src="look 6 home.jpeg">
-</div>
+        <p>
+
+            Premium Custom Streetwear inspired by modern culture,
+            designed to express your identity through fashion.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="product.html" class="btn">
+
+                CUSTOM NOW
+
+            </a>
+
+            <a href="style-lab.html" class="btn btn-outline">
+
+                STYLE LAB
+
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
-</header>
+
+<!-- =====================================================
+                    LOOKBOOK SLIDER
+====================================================== -->
+
+<section class="frdm-slider">
+
+    <div class="slider-title">
+
+        <h2>
+
+            FRDM LOOKBOOK
+
+        </h2>
+
+        <p>
+
+            Explore Our Signature Streetwear Looks
+
+        </p>
+
+    </div>
+
+    <div class="slide-track">
+
+        <!-- Set Pertama -->
+
+        <img src="look 1 home .jpeg" alt="Look 1">
+
+        <img src="look 2 home.jpeg" alt="Look 2">
+
+        <img src="look 3 home.jpeg" alt="Look 3">
+
+        <img src="look 4 home.jpeg" alt="Look 4">
+
+        <img src="look 5 home.jpeg" alt="Look 5">
+
+        <img src="look 6 home.jpeg" alt="Look 6">
+
+        <!-- Duplikat supaya infinite -->
+
+        <img src="look 1 home .jpeg" alt="Look 1">
+
+        <img src="look 2 home.jpeg" alt="Look 2">
+
+        <img src="look 3 home.jpeg" alt="Look 3">
+
+        <img src="look 4 home.jpeg" alt="Look 4">
+
+        <img src="look 5 home.jpeg" alt="Look 5">
+
+        <img src="look 6 home.jpeg" alt="Look 6">
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+                    PRODUCT CONCEPT
+====================================================== -->
 
 <section class="categories">
 
-<h2>OUR PRODUCT CONCEPT</h2>
+    <div class="section-title reveal">
 
-<div class="category-grid">
+        <h2>
 
-<div class="card">
-<img src="frdm cortis.png">
-<h3>Custom T-Shirt</h3>
-<p>with any color and cutting.</p>
-</div>
+            OUR PRODUCT CONCEPT
 
-<div class="card">
-<img src="frdm cortis 2.png">
-<h3>Custom Jeans</h3>
-<p>from Baggy to Skinny.</p>
-</div>
+        </h2>
 
-</div>
+        <p>
+
+            Every product is made based on your own personality.
+
+        </p>
+
+    </div>
+
+    <div class="category-grid">
+
+        <!-- Card 1 -->
+
+        <div class="card reveal">
+
+            <img
+                src="frdm cortis.png"
+                alt="Custom T-Shirt">
+
+            <h3>
+
+                Custom T-Shirt
+
+            </h3>
+
+            <p>
+
+                Choose your own cutting,
+                color,
+                fabric,
+                oversized,
+                regular,
+                cropped,
+                or boxy fit.
+
+            </p>
+
+        </div>
+
+        <!-- Card 2 -->
+
+        <div class="card reveal">
+
+            <img
+                src="frdm cortis 2.png"
+                alt="Custom Jeans">
+
+            <h3>
+
+                Custom Jeans
+
+            </h3>
+
+            <p>
+
+                Baggy,
+                Loose,
+                Flare,
+                Skinny,
+                Slim Straight,
+                crafted exactly the way you want.
+
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
+<!-- =====================================================
+                    LOOK RECOMMENDATION
+====================================================== -->
 
 <section class="recommendation">
 
-<h2>LOOKS RECOMENDATION</h2>
+    <div class="section-title reveal">
 
-<div class="recommend-grid">
+        <h2>
 
-<div class="recommend-card">
-<h3>Midnight Rebel</h3>
-<p>Oversize Hitam + Typography</p>
-</div>
+            LOOK RECOMMENDATION
 
-<div class="recommend-card">
-<h3>Street Classic</h3>
-<p>Boxy Tee + Baggy Jeans</p>
-</div>
+        </h2>
 
-<div class="recommend-card">
-<h3>Minimal Daily</h3>
-<p>White Tee + Slim Straight</p>
-</div>
+        <p>
 
-</div>
+            Our favorite outfit combinations for every personality.
+
+        </p>
+
+    </div>
+
+    <div class="recommend-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="recommend-card reveal">
+
+            <div class="recommend-image">
+
+                <img src="look 1 home .jpeg" alt="Midnight Rebel">
+
+            </div>
+
+            <div class="recommend-content">
+
+                <h3>
+
+                    Midnight Rebel
+
+                </h3>
+
+                <p>
+
+                    Oversized black tee with typography
+                    combined with baggy jeans.
+                    Perfect for night streetwear.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="recommend-card reveal">
+
+            <div class="recommend-image">
+
+                <img src="look 3 home.jpeg" alt="Street Classic">
+
+            </div>
+
+            <div class="recommend-content">
+
+                <h3>
+
+                    Street Classic
+
+                </h3>
+
+                <p>
+
+                    Boxy fit t-shirt paired with
+                    baggy denim.
+                    Clean, simple and timeless.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="recommend-card reveal">
+
+            <div class="recommend-image">
+
+                <img src="look 5 home.jpeg" alt="Minimal Daily">
+
+            </div>
+
+            <div class="recommend-content">
+
+                <h3>
+
+                    Minimal Daily
+
+                </h3>
+
+                <p>
+
+                    White oversized tee with
+                    slim straight jeans.
+                    Minimal but still premium.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
+
+<!-- =====================================================
+                    CTA SECTION
+====================================================== -->
+
+<section class="cta-section">
+
+    <div class="cta-box reveal">
+
+        <h2>
+
+            CREATE YOUR OWN STYLE
+
+        </h2>
+
+        <p>
+
+            Every piece is customizable.
+            Start designing your own outfit today.
+
+        </p>
+
+        <a href="product.html" class="btn">
+
+            START CUSTOM
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+                    FOOTER
+====================================================== -->
+
 <footer class="footer">
-  <div class="footer-container">
 
-    <div class="footer-col">
-      <h3>FRDM CULTURE</h3>
-      <p>Streetwear & Custom Apparel</p>
-      <p>Custom design sesuai request</p>
+    <div class="footer-container">
+
+        <!-- Brand -->
+
+        <div class="footer-col">
+
+            <h3>
+
+                FRDM CULTURE
+
+            </h3>
+
+            <p>
+
+                Premium Streetwear &
+                Custom Apparel.
+
+            </p>
+
+            <p>
+
+                Designed For Rebels.
+
+            </p>
+
+        </div>
+
+        <!-- Navigation -->
+
+        <div class="footer-col">
+
+            <h3>
+
+                Navigation
+
+            </h3>
+
+            <a href="index.html">
+
+                Home
+
+            </a>
+
+            <a href="product.html">
+
+                Products
+
+            </a>
+
+            <a href="rekomendasi.html">
+
+                Recommendation
+
+            </a>
+
+            <a href="style-lab.html">
+
+                Style Lab
+
+            </a>
+
+            <a href="FAQ.html">
+
+                FAQ
+
+            </a>
+
+        </div>
+
+        <!-- Contact -->
+
+        <div class="footer-col">
+
+            <h3>
+
+                Contact
+
+            </h3>
+
+            <p>
+
+                📧 frdmculture@gmail.com
+
+            </p>
+
+            <p>
+
+                📱 +62 858-1183-4307
+
+            </p>
+
+            <p>
+
+                Indonesia
+
+            </p>
+
+        </div>
+
+        <!-- Social -->
+
+        <div class="footer-col">
+
+            <h3>
+
+                Follow Us
+
+            </h3>
+
+            <a href="https://instagram.com/frdm_aparel" target="_blank">
+
+                <i class="fab fa-instagram"></i>
+
+                @frdm_aparel
+
+            </a>
+
+            <a href="https://tiktok.com/@frdm.co" target="_blank">
+
+                <i class="fab fa-tiktok"></i>
+
+                @frdm.co
+
+            </a>
+
+        </div>
+
     </div>
 
-    <div class="footer-col">
-      <h3>MENU</h3>
-      <a href="index.html">Home</a>
-      <a href="rekomendasi.html">Recommend</a>
-      <a href="style-lab.html">Style Lab</a>
-      <a href="FAQ.html">FAQ</a>
+    <hr>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © 2026
+            <strong>FRDM CULTURE</strong>
+
+            All Rights Reserved.
+
+        </p>
+
     </div>
 
-    <div class="footer-col">
-      <h3>HUBUNGI KAMI</h3>
-      <p>WhatsApp Admin</p>
-      <p>frdmculture@gmail.com</p>
-      <p>085811834307</p>
-    </div>
-
-    <div class="footer-col">
-      <h3>SOSIAL MEDIA</h3>
-
-      <a href="https://instagram.com/frdm_aparel" target="_blank">
-        <i class="fab fa-instagram"></i> @frdm_aparel
-      </a>
-
-      <a href="https://tiktok.com/@frdm.co" target="_blank">
-        <i class="fab fa-tiktok"></i> @frdm.co
-      </a>
-    </div>
-
-  </div>
-
-  <hr>
-
-  <div class="footer-bottom">
-    <p>© 2026 FRDM CULTURE. All rights reserved.</p>
-
-    
-  </div>
 </footer>
 <script>
-/*==========================================
-        FRDM SECRET MODE
-==========================================*/
+  /*=========================================================
+                    FRDM CULTURE
+                  HOME JAVASCRIPT
+=========================================================*/
 
 document.addEventListener("DOMContentLoaded",()=>{
 
-const logo=document.querySelector(".logo");
-const secret=document.getElementById("secret-mode");
-const output=document.getElementById("terminal-output");
-
-const glitch=document.getElementById("glitchSound");
-const music=document.getElementById("secretMusic");
-
-const badge=document.getElementById("secret-badge");
-const timer=document.getElementById("secret-timer");
+/*====================================
+            ELEMENT
+====================================*/
 
 const navbar=document.querySelector(".navbar");
 
-const cards=document.querySelectorAll(
+const menuToggle=document.getElementById("menuToggle");
 
-".card,.recommend-card,.product-card,.look-card,.member-card"
+const navMenu=document.getElementById("navMenu");
 
-);
+const intro=document.getElementById("intro-screen");
+
+const video=document.getElementById("intro-video");
+
+const enterBtn=document.getElementById("enter-btn");
+
+const loading=document.getElementById("loading-screen");
+
+const progress=document.querySelector(".loading-progress");
+
+const percent=document.getElementById("loading-percent");
+
+const reveal=document.querySelectorAll(".reveal");
+
+
+/*====================================
+        HAMBURGER MENU
+====================================*/
+
+menuToggle.addEventListener("click",()=>{
+
+navMenu.classList.toggle("active");
+
+});
+
+
+/*====================================
+ CLOSE MENU SETELAH KLIK LINK
+====================================*/
+
+document.querySelectorAll("#navMenu a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+navMenu.classList.remove("active");
+
+});
+
+});
+
+
+/*====================================
+      NAVBAR SCROLL EFFECT
+====================================*/
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>60){
+
+navbar.classList.add("scrolled");
+
+}else{
+
+navbar.classList.remove("scrolled");
+
+}
+
+});
+
+
+/*====================================
+          LOADING SCREEN
+====================================*/
+
+let value=0;
+
+const loadingInterval=setInterval(()=>{
+
+value++;
+
+progress.style.width=value+"%";
+
+percent.innerHTML=value+"%";
+
+if(value>=100){
+
+clearInterval(loadingInterval);
+
+setTimeout(()=>{
+
+loading.style.opacity="0";
+
+loading.style.visibility="hidden";
+
+},500);
+
+}
+
+},20);
+
+
+/*====================================
+         INTRO VIDEO
+====================================*/
+
+if(sessionStorage.getItem("introShown")==="true"){
+
+intro.style.display="none";
+
+}else{
+
+intro.style.display="flex";
+
+}
+
+
+enterBtn.addEventListener("click",()=>{
+
+enterBtn.style.display="none";
+
+video.play();
+
+});
+
+
+video.addEventListener("ended",()=>{
+
+sessionStorage.setItem("introShown","true");
+
+intro.style.display="none";
+
+});
+
+
+/*====================================
+        SCROLL REVEAL
+====================================*/
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+reveal.forEach(item=>{
+
+observer.observe(item);
+
+});
+/*=========================================================
+                    FRDM SECRET MODE
+=========================================================*/
+
+const logo=document.querySelector(".logo");
+
+const secret=document.getElementById("secret-mode");
+
+const output=document.getElementById("terminal-output");
+
+const glitch=document.getElementById("glitchSound");
+
+const music=document.getElementById("secretMusic");
+
+const badge=document.getElementById("secret-badge");
+
+const timer=document.getElementById("secret-timer");
 
 const cursor=document.getElementById("cursor-logo");
-// Cek apakah Secret Mode sudah pernah di-unlock
-if(localStorage.getItem("secretUnlocked")==="true"){
+
+const particle=document.getElementById("particle-container");
+
+const cards=document.querySelectorAll(
+".card,.recommend-card,.product-card,.look-card,.member-card"
+);
+
+let click=0;
+
+let active=false;
+
+
+/*====================================
+ Secret sudah pernah di Unlock?
+====================================*/
+
+if(localStorage.getItem("secretUnlocked")=="true"){
 
 document.body.style.cursor="none";
 
 cursor.style.display="block";
 
+music.play().catch(()=>{});
+
 }
 
-let click=0;
-let active=false;
 
-
-/*======================================
-Logo 3 Click
-======================================*/
+/*====================================
+ Logo Triple Click
+====================================*/
 
 logo.addEventListener("click",(e)=>{
 
-e.preventDefault();   // penting!
+e.preventDefault();
 
 if(active) return;
 
 click++;
 
-if(click==3){
-
-startSecret();
+if(click>=3){
 
 click=0;
 
+startSecret();
+
 }
 
-clearTimeout(window.logoTimer);
+clearTimeout(window.secretTimer);
 
-window.logoTimer=setTimeout(()=>{
+window.secretTimer=setTimeout(()=>{
 
 click=0;
 
@@ -350,13 +986,14 @@ click=0;
 });
 
 
-/*======================================
-Start Secret
-======================================*/
+/*====================================
+ START SECRET
+====================================*/
 
 function startSecret(){
 
 active=true;
+
 localStorage.setItem("secretUnlocked","true");
 
 secret.classList.add("active");
@@ -373,28 +1010,32 @@ document.body.style.cursor="none";
 
 cursor.style.display="block";
 
+glitch.currentTime=0;
+
 glitch.play();
 
 setTimeout(()=>{
 
 music.play();
 
-},1300);
+},1200);
 
-typingAnimation();
+typing();
 
-particleEffect();
+createParticle();
 
 countdown();
 
 }
 
 
-/*======================================
-Typing Animation
-======================================*/
+/*====================================
+ Typing Hacker Animation
+====================================*/
 
-function typingAnimation(){
+function typing(){
+
+output.innerHTML="";
 
 const text=[
 
@@ -402,54 +1043,52 @@ const text=[
 
 "",
 
-"CONNECTING...",
+"CONNECTING TO...",
 
 "",
 
-"FRDM EASTER EGG...",
+"FRDM DATABASE",
 
 "",
 
-"██████████████ 100%",
+"███████████████ 100%",
 
 "",
 
-"ENJOY THE MUSIC"
+"WELCOME CREATOR"
 
 ];
 
-output.innerHTML="";
+let index=0;
 
-let i=0;
+function nextLine(){
 
-function next(){
+if(index>=text.length) return;
 
-if(i>=text.length) return;
-
-const line=document.createElement("div");
+let line=document.createElement("div");
 
 line.classList.add("glitch");
 
 output.appendChild(line);
 
-typeWriter(line,text[i],0);
+type(line,text[index],0);
 
-i++;
+index++;
 
-setTimeout(next,700);
-
-}
-
-next();
+setTimeout(nextLine,700);
 
 }
 
+nextLine();
 
-/*======================================
-TypeWriter
-======================================*/
+}
 
-function typeWriter(element,text,index){
+
+/*====================================
+ TYPE EFFECT
+====================================*/
+
+function type(element,text,index){
 
 if(index<text.length){
 
@@ -457,18 +1096,18 @@ element.innerHTML+=text.charAt(index);
 
 setTimeout(()=>{
 
-typeWriter(element,text,index+1);
+type(element,text,index+1);
 
-},35);
-
-}
+},40);
 
 }
 
+}
 
-/*======================================
-Countdown
-======================================*/
+
+/*====================================
+ COUNTDOWN
+====================================*/
 
 function countdown(){
 
@@ -495,96 +1134,9 @@ endSecret();
 }
 
 
-/*======================================
-Particle
-======================================*/
-
-function particleEffect(){
-
-const container=document.getElementById("particle-container");
-
-container.innerHTML="";
-
-for(let i=0;i<120;i++){
-
-let p=document.createElement("span");
-
-p.style.position="absolute";
-
-p.style.width="5px";
-
-p.style.height="5px";
-
-p.style.background="red";
-
-p.style.borderRadius="50%";
-
-p.style.left=Math.random()*100+"%";
-
-p.style.top="100%";
-
-p.style.opacity=Math.random();
-
-p.style.boxShadow="0 0 10px red";
-
-container.appendChild(p);
-
-animateParticle(p);
-
-}
-
-}
-
-
-/*======================================
-Particle Animation
-======================================*/
-
-function animateParticle(p){
-
-let y=100;
-
-let speed=Math.random()*0.5+0.2;
-
-let x=parseFloat(p.style.left);
-
-let interval=setInterval(()=>{
-
-y-=speed;
-
-x+=Math.sin(y/10)*0.15;
-
-p.style.top=y+"%";
-
-p.style.left=x+"%";
-
-if(y<0){
-
-clearInterval(interval);
-
-}
-
-},15);
-
-}
-
-
-/*======================================
-Cursor
-======================================*/
-
-document.addEventListener("mousemove",(e)=>{
-
-cursor.style.left=e.clientX+"px";
-
-cursor.style.top=e.clientY+"px";
-
-});
-
-
-/*======================================
-End Secret
-======================================*/
+/*====================================
+ END SECRET
+====================================*/
 
 function endSecret(){
 
@@ -598,77 +1150,102 @@ card.classList.remove("secret-card");
 
 });
 
-// Cursor tetap aktif
-
 active=false;
 
-}
-});
-
-
-  const loading=document.getElementById("loading-screen");
-
-const progress=document.querySelector(".loading-progress");
-
-const percent=document.getElementById("loading-percent");
-
-let value=0;
-
-let loadingInterval=setInterval(()=>{
-
-value++;
-
-progress.style.width=value+"%";
-
-percent.innerHTML=value+"%";
-
-if(value>=100){
-
-clearInterval(loadingInterval);
-
-setTimeout(()=>{
-
-loading.style.opacity="0";
-loading.style.visibility="hidden";
-
-},3200);
-
+/* Cursor tetap aktif */
+/* Musik tetap jalan */
 
 }
 
-},25);
 
-const video = document.getElementById("intro-video");
-const intro = document.getElementById("intro-screen");
-const btn = document.getElementById("enter-btn");
+/*====================================
+ PARTICLE EFFECT
+====================================*/
 
-// Cek apakah intro sudah pernah ditampilkan
-if(sessionStorage.getItem("introShown") === "true"){
-    intro.style.display = "none";
-}else{
-    intro.style.display = "flex";
+function createParticle(){
+
+particle.innerHTML="";
+
+for(let i=0;i<120;i++){
+
+let dot=document.createElement("span");
+
+dot.style.position="absolute";
+
+dot.style.width="5px";
+
+dot.style.height="5px";
+
+dot.style.borderRadius="50%";
+
+dot.style.background="red";
+
+dot.style.left=Math.random()*100+"%";
+
+dot.style.top="100%";
+
+dot.style.opacity=Math.random();
+
+dot.style.boxShadow="0 0 10px red";
+
+particle.appendChild(dot);
+
+animate(dot);
+
 }
 
-// Saat tombol diklik
-btn.addEventListener("click", function(){
+}
 
-    btn.style.display = "none";
 
-    video.play();
+function animate(dot){
+
+let y=100;
+
+let x=parseFloat(dot.style.left);
+
+let speed=Math.random()*0.45+.25;
+
+let move=setInterval(()=>{
+
+y-=speed;
+
+x+=Math.sin(y/10)*.2;
+
+dot.style.top=y+"%";
+
+dot.style.left=x+"%";
+
+if(y<0){
+
+clearInterval(move);
+
+}
+
+},16);
+
+}
+
+
+/*====================================
+ CURSOR
+====================================*/
+
+document.addEventListener("mousemove",(e)=>{
+
+cursor.style.left=e.clientX+"px";
+
+cursor.style.top=e.clientY+"px";
 
 });
 
-// Saat video selesai
-video.addEventListener("ended", function(){
 
-    sessionStorage.setItem("introShown", "true");
+/*====================================
+ MOUSE TRAIL
+====================================*/
 
-    intro.style.display = "none";
+document.addEventListener("mousemove",(e)=>{
 
-});
-document.addEventListener("mousemove", function(e){
-
-const trail=document.createElement("div");
+let trail=document.createElement("div");
 
 trail.className="trail";
 
@@ -685,8 +1262,5 @@ trail.remove();
 },600);
 
 });
-
+});
 </script>
-
-</body>
-</html>
